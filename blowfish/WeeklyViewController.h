@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WeeklyViewController.h
 //  blowfish
 //
 //  Created by Jeff Grimes on 9/5/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface WeeklyViewController : UIViewController
 
 @end
