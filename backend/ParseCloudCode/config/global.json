@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "_default": {
+            "link": "blowfish"
+        }, 
+        "blowfish": {
+            "applicationId": "ykyK0asdcLBjMbN8m2mxQFRaalNFj8mFlZUEhayE", 
+            "masterKey": "2KBr1vrmGDJVEUGwrgOWM70jQDVVccmQf9FaVQId"
+        }
+    }
+}
