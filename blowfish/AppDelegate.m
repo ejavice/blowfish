@@ -6,12 +6,19 @@
 //  Copyright (c) 2013 Jeff Grimes. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // Parse
+  [Parse setApplicationId:@"ykyK0asdcLBjMbN8m2mxQFRaalNFj8mFlZUEhayE"
+                clientKey:@"szuJOwWQ7iiEEKj2ozbgoAnWY5TOSwGeutLho5Zp"];
+  [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   self.viewController = [[LoginViewController alloc] init];
@@ -19,6 +26,7 @@
   navController.navigationBarHidden = YES;
   self.window.rootViewController = navController;
   [self.window makeKeyAndVisible];
+
   return YES;
 }
 

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LovedOne.h"
+#import "Pill.h"
 
-@class LovedOne;
+@interface WeeklyViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@interface WeeklyViewController : UIViewController
+@property (nonatomic, retain) NSMutableArray *pills;
 
 - (id)initWithLovedOne:(LovedOne *)lovedOne;
 

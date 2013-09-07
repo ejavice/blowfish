@@ -10,4 +10,12 @@
 
 @implementation Pill
 
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name {
+  if (self = [super init]) {
+    self.objectId = objectId;
+    self.name = name;
+  }
+  return self;
+}
+
 @end

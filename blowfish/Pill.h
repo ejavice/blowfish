@@ -17,6 +17,10 @@ typedef enum {
 @interface Pill : NSObject
 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *objectId;
+@property (nonatomic, retain) NSMutableArray *days;
 @property (nonatomic, assign) PillTime pillTime;
+
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name;
 
 @end

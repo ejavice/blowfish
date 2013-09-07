@@ -6,26 +6,34 @@
 //  Copyright (c) 2013 Jeff Grimes. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+
 #import "LoginViewController.h"
 #import "SplashViewController.h"
+#import "SignupViewController.h"
 
 static const float topToTitleLabelPadding = 30;
 static const float titleLabelHeight = 50;
 static const float titleLabelToUsernameFieldPadding = 10;
 static const float usernameFieldToPasswordFieldPadding = 10;
-static const float passwordFieldToSubmitButtonPadding = 30;
+static const float passwordFieldToSubmitButtonPadding = 24;
+static const float submitButtonToSignupButtonPadding = 18;
 
 static const float entryFieldSidePadding = 44;
 static const float entryFieldHeight = 40;
 
-static const float submitButtonHeight = 40;
-static const float submitButtonWidth = 100;
+static const float submitButtonHeight = 38;
+static const float submitButtonWidth = 120;
+
+static const float signupButtonHeight = 38;
+static const float signupButtonWidth = 120;
 
 @interface LoginViewController () {
   UILabel *_titleLabel;
   UITextField *_usernameField;
   UITextField *_passwordField;
   UIButton *_submitButton;
+  UIButton *_signupButton;
 }
 
 @end
@@ -74,11 +82,29 @@ static const float submitButtonWidth = 100;
   [_submitButton setBackgroundColor:[UIColor orangeColor]];
   [self.view addSubview:_submitButton];
   
+  _signupButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - signupButtonWidth / 2, _submitButton.frame.origin.y + _submitButton.frame.size.height + submitButtonToSignupButtonPadding, signupButtonWidth, signupButtonHeight)];
+  [_signupButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+  [_signupButton addTarget:self action:@selector(signupButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+  [_signupButton setBackgroundColor:[UIColor orangeColor]];
+  [self.view addSubview:_signupButton];
 }
 
 - (void)submitButtonPressed {
-  SplashViewController *splashViewController = [[SplashViewController alloc] init];
-  [self.navigationController pushViewController:splashViewController animated:YES];
+  [PFUser logInWithUsernameInBackground:_usernameField.text password:_passwordField.text
+                                  block:^(PFUser *user, NSError *error) {
+    if (user) {
+      SplashViewController *splashViewController = [[SplashViewController alloc] init];
+      [self.navigationController pushViewController:splashViewController animated:YES];
+    } else {
+      UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid username/password." delegate:self cancelButtonTitle:@"Back" otherButtonTitles: nil];
+      [alertView show];
+    }
+  }];
+}
+
+- (void)signupButtonPressed {
+  SignupViewController *signupViewController = [[SignupViewController alloc] init];
+  [self.navigationController pushViewController:signupViewController animated:YES];
 }
 
 @end

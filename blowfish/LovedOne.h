@@ -11,7 +11,9 @@
 @interface LovedOne : NSObject
 
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *lovedOneId;
+@property (nonatomic, retain) NSString *objectId;
 @property (nonatomic, retain) NSArray *pills;
+
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name;
 
 @end

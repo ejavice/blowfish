@@ -17,11 +17,23 @@
 		0107CCCE17D9344B00BA79AF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0107CCCD17D9344B00BA79AF /* Default@2x.png */; };
 		0107CCD017D9344B00BA79AF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0107CCCF17D9344B00BA79AF /* Default-568h@2x.png */; };
 		0107CCD317D9344B00BA79AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0107CCD217D9344B00BA79AF /* LoginViewController.m */; };
-		0107CCDE17D937AB00BA79AF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0107CCDD17D937AB00BA79AF /* User.m */; };
 		0107CCE417D9385A00BA79AF /* LovedOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 0107CCE317D9385A00BA79AF /* LovedOne.m */; };
 		013C99F517D9453E008F901B /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C99F417D9453E008F901B /* SplashViewController.m */; };
 		013C99F817D94580008F901B /* WeeklyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C99F717D94580008F901B /* WeeklyViewController.m */; };
 		015491C817DADDC800AC2AB5 /* Pill.m in Sources */ = {isa = PBXBuildFile; fileRef = 015491C717DADDC800AC2AB5 /* Pill.m */; };
+		015491CA17DAE4B800AC2AB5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491C917DAE4B800AC2AB5 /* Parse.framework */; };
+		015491CC17DAE4DF00AC2AB5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491CB17DAE4DF00AC2AB5 /* AudioToolbox.framework */; };
+		015491CE17DAE4E300AC2AB5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491CD17DAE4E300AC2AB5 /* CFNetwork.framework */; };
+		015491D017DAE4F000AC2AB5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491CF17DAE4F000AC2AB5 /* CoreLocation.framework */; };
+		015491D217DAE4F400AC2AB5 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491D117DAE4F400AC2AB5 /* libz.1.1.3.dylib */; };
+		015491D417DAE4FB00AC2AB5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491D317DAE4FB00AC2AB5 /* MobileCoreServices.framework */; };
+		015491D617DAE50300AC2AB5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491D517DAE50300AC2AB5 /* QuartzCore.framework */; };
+		015491D817DAE50700AC2AB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491D717DAE50700AC2AB5 /* Security.framework */; };
+		015491DA17DAE50B00AC2AB5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491D917DAE50B00AC2AB5 /* StoreKit.framework */; };
+		015491DC17DAE51100AC2AB5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491DB17DAE51100AC2AB5 /* SystemConfiguration.framework */; };
+		015491E017DAF13600AC2AB5 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015491DF17DAF13600AC2AB5 /* SignupViewController.m */; };
+		015491E417DB263D00AC2AB5 /* back-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491E317DB263D00AC2AB5 /* back-icon.png */; };
+		015491E817DB272F00AC2AB5 /* plus-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491E717DB272F00AC2AB5 /* plus-icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +52,6 @@
 		0107CCCF17D9344B00BA79AF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0107CCD117D9344B00BA79AF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0107CCD217D9344B00BA79AF /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		0107CCDC17D937AB00BA79AF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		0107CCDD17D937AB00BA79AF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0107CCE217D9385A00BA79AF /* LovedOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LovedOne.h; sourceTree = "<group>"; };
 		0107CCE317D9385A00BA79AF /* LovedOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LovedOne.m; sourceTree = "<group>"; };
 		013C99F317D9453E008F901B /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
@@ -50,6 +60,20 @@
 		013C99F717D94580008F901B /* WeeklyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyViewController.m; sourceTree = "<group>"; };
 		015491C617DADDC800AC2AB5 /* Pill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pill.h; sourceTree = "<group>"; };
 		015491C717DADDC800AC2AB5 /* Pill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pill.m; sourceTree = "<group>"; };
+		015491C917DAE4B800AC2AB5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		015491CB17DAE4DF00AC2AB5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		015491CD17DAE4E300AC2AB5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		015491CF17DAE4F000AC2AB5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		015491D117DAE4F400AC2AB5 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		015491D317DAE4FB00AC2AB5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		015491D517DAE50300AC2AB5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		015491D717DAE50700AC2AB5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		015491D917DAE50B00AC2AB5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		015491DB17DAE51100AC2AB5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		015491DE17DAF13600AC2AB5 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		015491DF17DAF13600AC2AB5 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		015491E317DB263D00AC2AB5 /* back-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-icon.png"; sourceTree = "<group>"; };
+		015491E717DB272F00AC2AB5 /* plus-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +81,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015491DC17DAE51100AC2AB5 /* SystemConfiguration.framework in Frameworks */,
+				015491DA17DAE50B00AC2AB5 /* StoreKit.framework in Frameworks */,
+				015491D817DAE50700AC2AB5 /* Security.framework in Frameworks */,
+				015491D617DAE50300AC2AB5 /* QuartzCore.framework in Frameworks */,
+				015491D417DAE4FB00AC2AB5 /* MobileCoreServices.framework in Frameworks */,
+				015491D217DAE4F400AC2AB5 /* libz.1.1.3.dylib in Frameworks */,
+				015491D017DAE4F000AC2AB5 /* CoreLocation.framework in Frameworks */,
+				0107CCBE17D9344B00BA79AF /* CoreGraphics.framework in Frameworks */,
+				015491CE17DAE4E300AC2AB5 /* CFNetwork.framework in Frameworks */,
+				015491CC17DAE4DF00AC2AB5 /* AudioToolbox.framework in Frameworks */,
 				0107CCBA17D9344B00BA79AF /* UIKit.framework in Frameworks */,
 				0107CCBC17D9344B00BA79AF /* Foundation.framework in Frameworks */,
-				0107CCBE17D9344B00BA79AF /* CoreGraphics.framework in Frameworks */,
+				015491CA17DAE4B800AC2AB5 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +120,16 @@
 		0107CCB817D9344B00BA79AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				015491DB17DAE51100AC2AB5 /* SystemConfiguration.framework */,
+				015491D917DAE50B00AC2AB5 /* StoreKit.framework */,
+				015491D717DAE50700AC2AB5 /* Security.framework */,
+				015491D517DAE50300AC2AB5 /* QuartzCore.framework */,
+				015491D317DAE4FB00AC2AB5 /* MobileCoreServices.framework */,
+				015491D117DAE4F400AC2AB5 /* libz.1.1.3.dylib */,
+				015491CF17DAE4F000AC2AB5 /* CoreLocation.framework */,
+				015491CD17DAE4E300AC2AB5 /* CFNetwork.framework */,
+				015491CB17DAE4DF00AC2AB5 /* AudioToolbox.framework */,
+				015491C917DAE4B800AC2AB5 /* Parse.framework */,
 				0107CCB917D9344B00BA79AF /* UIKit.framework */,
 				0107CCBB17D9344B00BA79AF /* Foundation.framework */,
 				0107CCBD17D9344B00BA79AF /* CoreGraphics.framework */,
@@ -100,11 +144,14 @@
 				0107CCC917D9344B00BA79AF /* AppDelegate.m */,
 				0107CCD117D9344B00BA79AF /* LoginViewController.h */,
 				0107CCD217D9344B00BA79AF /* LoginViewController.m */,
+				015491DE17DAF13600AC2AB5 /* SignupViewController.h */,
+				015491DF17DAF13600AC2AB5 /* SignupViewController.m */,
 				013C99F317D9453E008F901B /* SplashViewController.h */,
 				013C99F417D9453E008F901B /* SplashViewController.m */,
 				013C99F617D94580008F901B /* WeeklyViewController.h */,
 				013C99F717D94580008F901B /* WeeklyViewController.m */,
 				013C99F217D93DE8008F901B /* Data Model */,
+				015491E217DB261C00AC2AB5 /* Resources */,
 				0107CCC017D9344B00BA79AF /* Supporting Files */,
 			);
 			path = blowfish;
@@ -127,14 +174,21 @@
 		013C99F217D93DE8008F901B /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				0107CCDC17D937AB00BA79AF /* User.h */,
-				0107CCDD17D937AB00BA79AF /* User.m */,
 				0107CCE217D9385A00BA79AF /* LovedOne.h */,
 				0107CCE317D9385A00BA79AF /* LovedOne.m */,
 				015491C617DADDC800AC2AB5 /* Pill.h */,
 				015491C717DADDC800AC2AB5 /* Pill.m */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		015491E217DB261C00AC2AB5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				015491E717DB272F00AC2AB5 /* plus-icon.png */,
+				015491E317DB263D00AC2AB5 /* back-icon.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +246,8 @@
 				0107CCCC17D9344B00BA79AF /* Default.png in Resources */,
 				0107CCCE17D9344B00BA79AF /* Default@2x.png in Resources */,
 				0107CCD017D9344B00BA79AF /* Default-568h@2x.png in Resources */,
+				015491E417DB263D00AC2AB5 /* back-icon.png in Resources */,
+				015491E817DB272F00AC2AB5 /* plus-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,11 +261,11 @@
 				0107CCC617D9344B00BA79AF /* main.m in Sources */,
 				0107CCCA17D9344B00BA79AF /* AppDelegate.m in Sources */,
 				0107CCD317D9344B00BA79AF /* LoginViewController.m in Sources */,
-				0107CCDE17D937AB00BA79AF /* User.m in Sources */,
 				0107CCE417D9385A00BA79AF /* LovedOne.m in Sources */,
 				013C99F517D9453E008F901B /* SplashViewController.m in Sources */,
 				013C99F817D94580008F901B /* WeeklyViewController.m in Sources */,
 				015491C817DADDC800AC2AB5 /* Pill.m in Sources */,
+				015491E017DAF13600AC2AB5 /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +342,10 @@
 		0107CCDA17D9344B00BA79AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "blowfish/blowfish-Prefix.pch";
 				INFOPLIST_FILE = "blowfish/blowfish-Info.plist";
@@ -297,6 +357,10 @@
 		0107CCDB17D9344B00BA79AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "blowfish/blowfish-Prefix.pch";
 				INFOPLIST_FILE = "blowfish/blowfish-Info.plist";
