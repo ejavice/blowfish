@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SplashViewController : UIViewController
+@interface SplashViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, retain) NSMutableArray *lovedOnes;
 
 @end

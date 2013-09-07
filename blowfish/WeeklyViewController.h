@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class LovedOne;
+
 @interface WeeklyViewController : UIViewController
+
+- (id)initWithLovedOne:(LovedOne *)lovedOne;
 
 @end

@@ -21,6 +21,7 @@
 		0107CCE417D9385A00BA79AF /* LovedOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 0107CCE317D9385A00BA79AF /* LovedOne.m */; };
 		013C99F517D9453E008F901B /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C99F417D9453E008F901B /* SplashViewController.m */; };
 		013C99F817D94580008F901B /* WeeklyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C99F717D94580008F901B /* WeeklyViewController.m */; };
+		015491C817DADDC800AC2AB5 /* Pill.m in Sources */ = {isa = PBXBuildFile; fileRef = 015491C717DADDC800AC2AB5 /* Pill.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		013C99F417D9453E008F901B /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		013C99F617D94580008F901B /* WeeklyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyViewController.h; sourceTree = "<group>"; };
 		013C99F717D94580008F901B /* WeeklyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyViewController.m; sourceTree = "<group>"; };
+		015491C617DADDC800AC2AB5 /* Pill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pill.h; sourceTree = "<group>"; };
+		015491C717DADDC800AC2AB5 /* Pill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pill.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				0107CCDD17D937AB00BA79AF /* User.m */,
 				0107CCE217D9385A00BA79AF /* LovedOne.h */,
 				0107CCE317D9385A00BA79AF /* LovedOne.m */,
+				015491C617DADDC800AC2AB5 /* Pill.h */,
+				015491C717DADDC800AC2AB5 /* Pill.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				0107CCE417D9385A00BA79AF /* LovedOne.m in Sources */,
 				013C99F517D9453E008F901B /* SplashViewController.m in Sources */,
 				013C99F817D94580008F901B /* WeeklyViewController.m in Sources */,
+				015491C817DADDC800AC2AB5 /* Pill.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
