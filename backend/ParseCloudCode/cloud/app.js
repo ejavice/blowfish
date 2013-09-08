@@ -29,8 +29,9 @@ app.get('/hello', function(req, res) {
 app.get('/phone/*', function(req, res) {
   res.header('Content-Type', 'application/xml');
   res.render('phonehandle');
-  console.log("Number Remembered: "+req.query.To);
   //TODO UPDATE REMEMBERED!!
+  var phoneNumber = req.query.To.replace('+','');
+  Parse.Cloud.run("updateRemembered", {"phone": ""+phoneNumber});
 });
 
 

@@ -7,8 +7,6 @@ var twilioAuthToken = "46653b52833b0a2757d15e167610e5b6";
 var twilioPhoneNumber = "+19142886105";
 twilio.initialize(twilioSid, twilioAuthToken);
 
-var lovedOneNumberArr = [];
-
 Parse.Cloud.job("callMorningPhones", function(request, response) {
 	var date = new Date();
 	var dayofWeek = ""+date.getDay();
@@ -155,6 +153,27 @@ Parse.Cloud.define("sendSMS", function(request, response) {
 Parse.Cloud.define("receiveSMS", function(request, response) {
 	console.log("Received a new text: " + request.params.From);
 	response.success();
+});
+
+//Update remembered
+Parse.Cloud.define("updateRemembered", function(request, response) {
+	var updateQueryRem = new Parse.Query("Loved_Ones");
+	updateQueryRem.equalTo("phoneNumber", ""+request.params.phone);
+	updateQueryRem.find({
+		success: function(results) {
+			if(results[0].get("numRemembered")===undefined){
+				results[0].set("numRemembered", 1);
+			}else{
+				results[0].increment("numRemembered");
+				
+			}
+			results[0].save();
+			response.success("Updated: User Remembered To take Meds");
+		},
+		error: function() {
+			response.error("Update Remembered Fail");
+		}
+	});
 });
 
 	
