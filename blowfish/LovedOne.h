@@ -13,7 +13,8 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *objectId;
 @property (nonatomic, retain) NSArray *pills;
+@property (nonatomic, retain) NSString *phoneNumber;
 
-- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name;
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name phoneNumber:(NSString *)phoneNumber;
 
 @end

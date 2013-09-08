@@ -10,10 +10,12 @@
 
 @implementation Pill
 
-- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name {
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name days:(NSString *)days pillTime:(NSString *)pillTime {
   if (self = [super init]) {
     self.objectId = objectId;
     self.name = name;
+    self.days = days;
+    self.pillTime = pillTime;
   }
   return self;
 }

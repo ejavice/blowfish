@@ -8,19 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
-  kPillTimeMorning,
-  kPillTimeAfternoon,
-  kPillTimeEvening
-} PillTime;
-
 @interface Pill : NSObject
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *objectId;
-@property (nonatomic, retain) NSMutableArray *days;
-@property (nonatomic, assign) PillTime pillTime;
+@property (nonatomic, retain) NSString *days;
+@property (nonatomic, assign) NSString *pillTime;
 
-- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name;
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name days:(NSString *)days pillTime:(NSString *)pillTime;
 
 @end

@@ -32,8 +32,25 @@
 		015491DA17DAE50B00AC2AB5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491D917DAE50B00AC2AB5 /* StoreKit.framework */; };
 		015491DC17DAE51100AC2AB5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015491DB17DAE51100AC2AB5 /* SystemConfiguration.framework */; };
 		015491E017DAF13600AC2AB5 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015491DF17DAF13600AC2AB5 /* SignupViewController.m */; };
-		015491E417DB263D00AC2AB5 /* back-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491E317DB263D00AC2AB5 /* back-icon.png */; };
-		015491E817DB272F00AC2AB5 /* plus-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491E717DB272F00AC2AB5 /* plus-icon.png */; };
+		015491EB17DBC67A00AC2AB5 /* PillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015491EA17DBC67A00AC2AB5 /* PillCell.m */; };
+		015491EF17DBC6BF00AC2AB5 /* PillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015491EE17DBC6BF00AC2AB5 /* PillCell.xib */; };
+		015491F117DBCBF800AC2AB5 /* pill.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491F017DBCBF800AC2AB5 /* pill.png */; };
+		015491F317DBCCAE00AC2AB5 /* pill3.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491F217DBCCAE00AC2AB5 /* pill3.png */; };
+		015491F517DBCD5800AC2AB5 /* pill2.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491F417DBCD5800AC2AB5 /* pill2.png */; };
+		015491F717DC20B600AC2AB5 /* knitting.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491F617DC20B600AC2AB5 /* knitting.png */; };
+		015491F917DC288400AC2AB5 /* elastoplast.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491F817DC288400AC2AB5 /* elastoplast.png */; };
+		015491FB17DC293200AC2AB5 /* dimension.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491FA17DC293200AC2AB5 /* dimension.png */; };
+		015491FD17DC293B00AC2AB5 /* hoffman.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491FC17DC293B00AC2AB5 /* hoffman.png */; };
+		015491FF17DC294300AC2AB5 /* brickwall.png in Resources */ = {isa = PBXBuildFile; fileRef = 015491FE17DC294200AC2AB5 /* brickwall.png */; };
+		0154920317DC2A5D00AC2AB5 /* neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154920017DC2A5C00AC2AB5 /* neutral.png */; };
+		0154920417DC2A5D00AC2AB5 /* straws.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154920117DC2A5C00AC2AB5 /* straws.png */; };
+		0154920517DC2A5D00AC2AB5 /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154920217DC2A5D00AC2AB5 /* stripes.png */; };
+		0154920717DC324F00AC2AB5 /* plus-icon-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154920617DC324E00AC2AB5 /* plus-icon-white.png */; };
+		0154920A17DC35AF00AC2AB5 /* heart1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154920817DC35AE00AC2AB5 /* heart1.png */; };
+		0154920B17DC35AF00AC2AB5 /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154920917DC35AF00AC2AB5 /* heart2.png */; };
+		0154920E17DC35E800AC2AB5 /* LovedOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154920D17DC35E800AC2AB5 /* LovedOneCell.m */; };
+		0154921017DC35F800AC2AB5 /* LovedOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0154920F17DC35F800AC2AB5 /* LovedOneCell.xib */; };
+		0154921217DC3F0E00AC2AB5 /* back-icon-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154921117DC3F0D00AC2AB5 /* back-icon-white.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +89,27 @@
 		015491DB17DAE51100AC2AB5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		015491DE17DAF13600AC2AB5 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		015491DF17DAF13600AC2AB5 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
-		015491E317DB263D00AC2AB5 /* back-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-icon.png"; sourceTree = "<group>"; };
-		015491E717DB272F00AC2AB5 /* plus-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon.png"; sourceTree = "<group>"; };
+		015491E917DBC67A00AC2AB5 /* PillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PillCell.h; sourceTree = "<group>"; };
+		015491EA17DBC67A00AC2AB5 /* PillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PillCell.m; sourceTree = "<group>"; };
+		015491EE17DBC6BF00AC2AB5 /* PillCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PillCell.xib; sourceTree = "<group>"; };
+		015491F017DBCBF800AC2AB5 /* pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pill.png; sourceTree = "<group>"; };
+		015491F217DBCCAE00AC2AB5 /* pill3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pill3.png; sourceTree = "<group>"; };
+		015491F417DBCD5800AC2AB5 /* pill2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pill2.png; sourceTree = "<group>"; };
+		015491F617DC20B600AC2AB5 /* knitting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knitting.png; sourceTree = "<group>"; };
+		015491F817DC288400AC2AB5 /* elastoplast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elastoplast.png; sourceTree = "<group>"; };
+		015491FA17DC293200AC2AB5 /* dimension.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dimension.png; sourceTree = "<group>"; };
+		015491FC17DC293B00AC2AB5 /* hoffman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoffman.png; sourceTree = "<group>"; };
+		015491FE17DC294200AC2AB5 /* brickwall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brickwall.png; sourceTree = "<group>"; };
+		0154920017DC2A5C00AC2AB5 /* neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral.png; sourceTree = "<group>"; };
+		0154920117DC2A5C00AC2AB5 /* straws.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = straws.png; sourceTree = "<group>"; };
+		0154920217DC2A5D00AC2AB5 /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
+		0154920617DC324E00AC2AB5 /* plus-icon-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-icon-white.png"; sourceTree = "<group>"; };
+		0154920817DC35AE00AC2AB5 /* heart1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart1.png; sourceTree = "<group>"; };
+		0154920917DC35AF00AC2AB5 /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart2.png; sourceTree = "<group>"; };
+		0154920C17DC35E800AC2AB5 /* LovedOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LovedOneCell.h; sourceTree = "<group>"; };
+		0154920D17DC35E800AC2AB5 /* LovedOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LovedOneCell.m; sourceTree = "<group>"; };
+		0154920F17DC35F800AC2AB5 /* LovedOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LovedOneCell.xib; sourceTree = "<group>"; };
+		0154921117DC3F0D00AC2AB5 /* back-icon-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-icon-white.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,15 +178,9 @@
 			children = (
 				0107CCC817D9344B00BA79AF /* AppDelegate.h */,
 				0107CCC917D9344B00BA79AF /* AppDelegate.m */,
-				0107CCD117D9344B00BA79AF /* LoginViewController.h */,
-				0107CCD217D9344B00BA79AF /* LoginViewController.m */,
-				015491DE17DAF13600AC2AB5 /* SignupViewController.h */,
-				015491DF17DAF13600AC2AB5 /* SignupViewController.m */,
-				013C99F317D9453E008F901B /* SplashViewController.h */,
-				013C99F417D9453E008F901B /* SplashViewController.m */,
-				013C99F617D94580008F901B /* WeeklyViewController.h */,
-				013C99F717D94580008F901B /* WeeklyViewController.m */,
+				015491ED17DBC69500AC2AB5 /* Controllers */,
 				013C99F217D93DE8008F901B /* Data Model */,
+				015491EC17DBC68200AC2AB5 /* Cell */,
 				015491E217DB261C00AC2AB5 /* Resources */,
 				0107CCC017D9344B00BA79AF /* Supporting Files */,
 			);
@@ -185,10 +215,51 @@
 		015491E217DB261C00AC2AB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				015491E717DB272F00AC2AB5 /* plus-icon.png */,
-				015491E317DB263D00AC2AB5 /* back-icon.png */,
+				0154920817DC35AE00AC2AB5 /* heart1.png */,
+				0154920917DC35AF00AC2AB5 /* heart2.png */,
+				0154920017DC2A5C00AC2AB5 /* neutral.png */,
+				0154920117DC2A5C00AC2AB5 /* straws.png */,
+				0154920217DC2A5D00AC2AB5 /* stripes.png */,
+				015491FE17DC294200AC2AB5 /* brickwall.png */,
+				015491FC17DC293B00AC2AB5 /* hoffman.png */,
+				015491FA17DC293200AC2AB5 /* dimension.png */,
+				015491F817DC288400AC2AB5 /* elastoplast.png */,
+				015491F617DC20B600AC2AB5 /* knitting.png */,
+				015491F017DBCBF800AC2AB5 /* pill.png */,
+				015491F417DBCD5800AC2AB5 /* pill2.png */,
+				015491F217DBCCAE00AC2AB5 /* pill3.png */,
+				0154920617DC324E00AC2AB5 /* plus-icon-white.png */,
+				0154921117DC3F0D00AC2AB5 /* back-icon-white.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		015491EC17DBC68200AC2AB5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				015491E917DBC67A00AC2AB5 /* PillCell.h */,
+				015491EA17DBC67A00AC2AB5 /* PillCell.m */,
+				015491EE17DBC6BF00AC2AB5 /* PillCell.xib */,
+				0154920C17DC35E800AC2AB5 /* LovedOneCell.h */,
+				0154920D17DC35E800AC2AB5 /* LovedOneCell.m */,
+				0154920F17DC35F800AC2AB5 /* LovedOneCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		015491ED17DBC69500AC2AB5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0107CCD117D9344B00BA79AF /* LoginViewController.h */,
+				0107CCD217D9344B00BA79AF /* LoginViewController.m */,
+				015491DE17DAF13600AC2AB5 /* SignupViewController.h */,
+				015491DF17DAF13600AC2AB5 /* SignupViewController.m */,
+				013C99F317D9453E008F901B /* SplashViewController.h */,
+				013C99F417D9453E008F901B /* SplashViewController.m */,
+				013C99F617D94580008F901B /* WeeklyViewController.h */,
+				013C99F717D94580008F901B /* WeeklyViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +317,23 @@
 				0107CCCC17D9344B00BA79AF /* Default.png in Resources */,
 				0107CCCE17D9344B00BA79AF /* Default@2x.png in Resources */,
 				0107CCD017D9344B00BA79AF /* Default-568h@2x.png in Resources */,
-				015491E417DB263D00AC2AB5 /* back-icon.png in Resources */,
-				015491E817DB272F00AC2AB5 /* plus-icon.png in Resources */,
+				015491EF17DBC6BF00AC2AB5 /* PillCell.xib in Resources */,
+				015491F117DBCBF800AC2AB5 /* pill.png in Resources */,
+				015491F317DBCCAE00AC2AB5 /* pill3.png in Resources */,
+				015491F517DBCD5800AC2AB5 /* pill2.png in Resources */,
+				015491F717DC20B600AC2AB5 /* knitting.png in Resources */,
+				015491F917DC288400AC2AB5 /* elastoplast.png in Resources */,
+				015491FB17DC293200AC2AB5 /* dimension.png in Resources */,
+				015491FD17DC293B00AC2AB5 /* hoffman.png in Resources */,
+				015491FF17DC294300AC2AB5 /* brickwall.png in Resources */,
+				0154920317DC2A5D00AC2AB5 /* neutral.png in Resources */,
+				0154920417DC2A5D00AC2AB5 /* straws.png in Resources */,
+				0154920517DC2A5D00AC2AB5 /* stripes.png in Resources */,
+				0154920717DC324F00AC2AB5 /* plus-icon-white.png in Resources */,
+				0154920A17DC35AF00AC2AB5 /* heart1.png in Resources */,
+				0154920B17DC35AF00AC2AB5 /* heart2.png in Resources */,
+				0154921017DC35F800AC2AB5 /* LovedOneCell.xib in Resources */,
+				0154921217DC3F0E00AC2AB5 /* back-icon-white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +352,8 @@
 				013C99F817D94580008F901B /* WeeklyViewController.m in Sources */,
 				015491C817DADDC800AC2AB5 /* Pill.m in Sources */,
 				015491E017DAF13600AC2AB5 /* SignupViewController.m in Sources */,
+				015491EB17DBC67A00AC2AB5 /* PillCell.m in Sources */,
+				0154920E17DC35E800AC2AB5 /* LovedOneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

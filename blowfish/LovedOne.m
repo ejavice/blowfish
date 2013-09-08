@@ -10,10 +10,11 @@
 
 @implementation LovedOne
 
-- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name {
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name phoneNumber:(NSString *)phoneNumber {
   if (self = [super init]) {
     self.objectId = objectId;
     self.name = name;
+    self.phoneNumber = phoneNumber;
   }
   return self;
 }

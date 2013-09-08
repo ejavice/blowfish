@@ -9,10 +9,11 @@
 #import <Parse/Parse.h>
 
 #import "WeeklyViewController.h"
+#import "PillCell.h"
 
-static const float topBarHeight = 60;
+static const float topBarHeight = 50;
 static const float topBarButtonSidePadding = 8;
-static const float topBarButtonSize = 36;
+static const float topBarButtonSize = 26;
 
 @interface WeeklyViewController () {
   UITableView *_tableView;
@@ -36,28 +37,31 @@ static const float topBarButtonSize = 36;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self.view setBackgroundColor:[UIColor whiteColor]];
+  [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"knitting.png"]]];
   
   _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, topBarHeight, self.view.bounds.size.width, self.view.bounds.size.height - topBarHeight) style:UITableViewStylePlain];
   _tableView.dataSource = self;
   _tableView.delegate = self;
   _tableView.separatorColor = [UIColor clearColor];
+  _tableView.backgroundColor = [UIColor clearColor];
+  [_tableView registerNib:[UINib nibWithNibName:@"PillCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"PillCellReuseID"];
   [self.view addSubview:_tableView];
   
   UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, topBarHeight)];
   titleLabel.text = _lovedOne.name;
-  titleLabel.font = [UIFont systemFontOfSize:23];
+  titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24];
   titleLabel.textAlignment = NSTextAlignmentCenter;
   titleLabel.backgroundColor = [UIColor orangeColor];
+  titleLabel.textColor = [UIColor whiteColor];
   [self.view addSubview:titleLabel];
   
   _backButton = [[UIButton alloc] initWithFrame:CGRectMake(topBarButtonSidePadding, (topBarHeight - topBarButtonSize) / 2, topBarButtonSize, topBarButtonSize)];
-  [_backButton setImage:[UIImage imageNamed:@"back-icon.png"] forState:UIControlStateNormal];
+  [_backButton setImage:[UIImage imageNamed:@"back-icon-white.png"] forState:UIControlStateNormal];
   [_backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:_backButton];
   
   _plusButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - topBarButtonSidePadding - topBarButtonSize, (topBarHeight - topBarButtonSize) / 2, topBarButtonSize, topBarButtonSize)];
-  [_plusButton setImage:[UIImage imageNamed:@"plus-icon.png"] forState:UIControlStateNormal];
+  [_plusButton setImage:[UIImage imageNamed:@"plus-icon-white.png"] forState:UIControlStateNormal];
   [_plusButton addTarget:self action:@selector(plusButtonPressed) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:_plusButton];
   
@@ -72,8 +76,10 @@ static const float topBarButtonSize = 36;
       for (PFObject *object in objects) {
         NSString *objectId = object.objectId;
         NSString *name = [object objectForKey:@"pillName"];
+        NSString *days = [object objectForKey:@"days"];
+        NSString *pillTime = [object objectForKey:@"time"];
         if (![self pillAlreadyExists:objectId]) {
-          Pill *pill = [[Pill alloc] initWithObjectId:objectId name:name];
+          Pill *pill = [[Pill alloc] initWithObjectId:objectId name:name days:days pillTime:pillTime];
           [self.pills addObject:pill];
         }
       }
@@ -102,18 +108,35 @@ static const float topBarButtonSize = 36;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *CellIdentifier = @"Cell";
+  static NSString *CellIdentifier = @"PillCellReuseID";
   
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  PillCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell = [[PillCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
   
   Pill *pill = [self.pills objectAtIndex:indexPath.row];
-  cell.textLabel.text = pill.name;
-  cell.textLabel.font = [UIFont systemFontOfSize:19];
-  cell.selectionStyle = UITableViewCellSelectionStyleGray;
+  
+  cell.pillNameLabel.text = pill.name;
+  
+  if ([pill.pillTime isEqualToString:@"morning"]) {
+    [cell.pillTimeControl setSelectedSegmentIndex:0];
+  } else if ([pill.pillTime isEqualToString:@"afternoon"]) {
+    [cell.pillTimeControl setSelectedSegmentIndex:1];
+  } else {
+    [cell.pillTimeControl setSelectedSegmentIndex:2];
+  }
+  
+  if ([pill.days rangeOfString:@"0"].location != NSNotFound) {
+    cell.mondayButton.selected = YES;
+  }
+  
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
   return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return 140;
 }
 
 - (void)backButtonPressed {
@@ -121,18 +144,22 @@ static const float topBarButtonSize = 36;
 }
 
 - (void)plusButtonPressed {
-  UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"New Medication" message:@"What is the name of the medication?" delegate:self cancelButtonTitle:@"Create" otherButtonTitles:@"Cancel", nil];
+  UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"New Medication" message:@"What is the medication's name?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create", nil];
   alert.alertViewStyle = UIAlertViewStylePlainTextInput;
   [alert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-  if (buttonIndex == 0) {
+  if (buttonIndex == 1) {
     NSString *nameEntered = [[alertView textFieldAtIndex:0] text];
     
     PFObject *pill = [PFObject objectWithClassName:@"Pills_To_Take"];
     [pill setObject:nameEntered forKey:@"pillName"];
     [pill setObject:_lovedOne.objectId forKey:@"lovedOne"];
+    [pill setObject:@"0123456" forKey:@"days"];
+    [pill setObject:@"morning" forKey:@"time"];
+    [pill setObject:_lovedOne.name forKey:@"lovedOneName"];
+    [pill setObject:_lovedOne.phoneNumber forKey:@"lovedOneNumber"];
     [pill saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
       if (!error) {
         [self reloadTableView];
