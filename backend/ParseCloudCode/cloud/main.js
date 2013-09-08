@@ -1,9 +1,13 @@
+require('cloud/app.js');
+
 //twilio initialize
 var twilio = require("cloud/twilio_extended.js");
 var twilioSid = "AC373eaacb72f601e5fe64a9278197d0c3";
 var twilioAuthToken = "46653b52833b0a2757d15e167610e5b6";
 var twilioPhoneNumber = "+19142886105";
 twilio.initialize(twilioSid, twilioAuthToken);
+
+var lovedOneNumberArr = [];
 
 Parse.Cloud.job("callMorningPhones", function(request, response) {
 	var date = new Date();
@@ -91,16 +95,34 @@ function callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberA
 		if(lovedOneNumberArr[i]!==undefined){
 			var text = "Hello "+lovedOneNameArr[i]+"! Did you remember to take your "+ pillNameArr[i]+". If you did, press 1. If not, please take your medication now.";
 			console.log("Text: "+text);
-			callPhone("+"+lovedOneNumberArr[i], text);
+			callPhoneOptions("+"+lovedOneNumberArr[i], text);
 		}
 	}
+	console.log("Got here first");
 }
 
-function callPhone(number, text){
+//Without Options
+// function callPhone(number, text){
+//	twilio.callPhone({
+//		From: twilioPhoneNumber,
+//		To: number,
+//		Url: "http://twimlets.com/echo?Twiml=%3CResponse%3E%3CSay%3E"+encodeURI(text)+"%3C%2FSay%3E%3C%2FResponse%3E"
+//	}, {
+// success: function(httpResponse) {
+//		console.log(httpResponse);
+//	},
+//	error: function(httpResponse) {
+//		console.error(httpResponse);
+//	}
+//	});
+// }
+
+//With Options
+function callPhoneOptions(number, text){
 	twilio.callPhone({
 		From: twilioPhoneNumber,
 		To: number,
-		Url: "http://twimlets.com/echo?Twiml=%3CResponse%3E%3CSay%3E"+encodeURI(text)+"%3C%2FSay%3E%3C%2FResponse%3E"
+		Url: "http://twimlets.com/menu?Message="+encodeURI(text)+"&Options%5B1%5D=http%3A%2F%2Fblowfish.parseapp.com%2Fphone/handle&"
 	}, {
 	success: function(httpResponse) {
 		console.log(httpResponse);
