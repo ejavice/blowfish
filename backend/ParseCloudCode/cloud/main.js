@@ -196,6 +196,4 @@ Parse.Cloud.define("dialIncrement", function(request, response) {
 		}
 	});
 });
-
-
 	
