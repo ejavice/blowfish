@@ -94,6 +94,7 @@ function callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberA
 			var text = "Hello "+lovedOneNameArr[i]+"! Did you remember to take your "+ pillNameArr[i]+". If you did, press 1. If not, please take your medication now.";
 			console.log("Text: "+text);
 			callPhoneOptions("+"+lovedOneNumberArr[i], text);
+			Parse.Cloud.run("dialIncrement", {"phone": ""+lovedOneNumberArr[i]});
 		}
 	}
 	console.log("Got here first");
@@ -175,5 +176,26 @@ Parse.Cloud.define("updateRemembered", function(request, response) {
 		}
 	});
 });
+
+Parse.Cloud.define("dialIncrement", function(request, response) {
+  var updatetotalCalls = new Parse.Query("Loved_Ones");
+	updatetotalCalls.equalTo("phoneNumber", ""+request.params.phone);
+	updatetotalCalls.find({
+		success: function(results) {
+			if(results[0].get("totalCalls")===undefined){
+				results[0].set("totalCalls", 1);
+			}else{
+				results[0].increment("totalCalls");
+				
+			}
+			results[0].save();
+			response.success("Updated: Log user Dial");
+		},
+		error: function() {
+			response.error("Update Dial Fail");
+		}
+	});
+});
+
 
 	
