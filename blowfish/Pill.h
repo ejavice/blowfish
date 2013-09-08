@@ -13,8 +13,9 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *objectId;
 @property (nonatomic, retain) NSString *days;
-@property (nonatomic, assign) NSString *pillTime;
+@property (nonatomic, retain) NSString *pillTime;
+@property (nonatomic, retain) NSString *smsOrPhone;
 
-- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name days:(NSString *)days pillTime:(NSString *)pillTime;
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name days:(NSString *)days pillTime:(NSString *)pillTime smsOrPhone:(NSString *)smsOrPhone;
 
 @end
