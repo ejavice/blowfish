@@ -178,7 +178,7 @@ static const float topBarButtonSize = 26;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
   if (buttonIndex == 1) {
     NSString *nameEntered = [_nameField text];
-    NSString *phoneEntered = [_phoneField text];
+    NSString *phoneEntered = [@"1" stringByAppendingString:[_phoneField text]];
     
     PFObject *lovedOne = [PFObject objectWithClassName:@"Loved_Ones"];
     [lovedOne setObject:nameEntered forKey:@"name"];

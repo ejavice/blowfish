@@ -18,7 +18,7 @@
     [button setBackgroundColor:[UIColor orangeColor]];
   } else {
     [button setSelected:NO];
-    [button setBackgroundColor:[UIColor grayColor]];
+    [button setBackgroundColor:[UIColor lightGrayColor]];
   }
 }
 
@@ -27,23 +27,23 @@
   NSString *time = button.titleLabel.text;
   if ([time isEqualToString:@"Morning"]) {
     self.morningButton.backgroundColor = [UIColor redColor];
-    self.afternoonButton.backgroundColor = [UIColor grayColor];
-    self.eveningButton.backgroundColor = [UIColor grayColor];
+    self.afternoonButton.backgroundColor = [UIColor lightGrayColor];
+    self.eveningButton.backgroundColor = [UIColor lightGrayColor];
     
     self.morningButton.selected = YES;
     self.afternoonButton.selected = NO;
     self.eveningButton.selected = NO;
   } else if ([time isEqualToString:@"Afternoon"]) {
-    self.morningButton.backgroundColor = [UIColor grayColor];
+    self.morningButton.backgroundColor = [UIColor lightGrayColor];
     self.afternoonButton.backgroundColor = [UIColor redColor];
-    self.eveningButton.backgroundColor = [UIColor grayColor];
+    self.eveningButton.backgroundColor = [UIColor lightGrayColor];
     
     self.morningButton.selected = NO;
     self.afternoonButton.selected = YES;
     self.eveningButton.selected = NO;
   } else {
-    self.morningButton.backgroundColor = [UIColor grayColor];
-    self.afternoonButton.backgroundColor = [UIColor grayColor];
+    self.morningButton.backgroundColor = [UIColor lightGrayColor];
+    self.afternoonButton.backgroundColor = [UIColor lightGrayColor];
     self.eveningButton.backgroundColor = [UIColor redColor];
     
     self.morningButton.selected = NO;
