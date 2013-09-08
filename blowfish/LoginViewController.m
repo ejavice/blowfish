@@ -14,7 +14,7 @@
 
 static const float topToTitleLabelPadding = 20;
 static const float titleLabelHeight = 40;
-static const float titleLabelToUsernameFieldPadding = 14;
+static const float titleLabelToUsernameFieldPadding = 16;
 static const float usernameFieldToPasswordFieldPadding = 10;
 static const float passwordFieldToSubmitButtonPadding = 24;
 static const float submitButtonToSignupButtonPadding = 18;

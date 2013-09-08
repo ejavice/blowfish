@@ -39,7 +39,7 @@ static const float signupButtonWidth = 320;
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"dimension.png"]];
+  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"knitting.png"]];
 
   
   _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, topToTitleLabelPadding, self.view.bounds.size.width, titleLabelHeight)];

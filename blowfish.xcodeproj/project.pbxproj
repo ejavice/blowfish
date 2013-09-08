@@ -51,6 +51,8 @@
 		0154920E17DC35E800AC2AB5 /* LovedOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154920D17DC35E800AC2AB5 /* LovedOneCell.m */; };
 		0154921017DC35F800AC2AB5 /* LovedOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0154920F17DC35F800AC2AB5 /* LovedOneCell.xib */; };
 		0154921217DC3F0E00AC2AB5 /* back-icon-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154921117DC3F0D00AC2AB5 /* back-icon-white.png */; };
+		0154921517DC81E300AC2AB5 /* landline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154921317DC81E300AC2AB5 /* landline.png */; };
+		0154921617DC81E300AC2AB5 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = 0154921417DC81E300AC2AB5 /* message.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		0154920D17DC35E800AC2AB5 /* LovedOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LovedOneCell.m; sourceTree = "<group>"; };
 		0154920F17DC35F800AC2AB5 /* LovedOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LovedOneCell.xib; sourceTree = "<group>"; };
 		0154921117DC3F0D00AC2AB5 /* back-icon-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-icon-white.png"; sourceTree = "<group>"; };
+		0154921317DC81E300AC2AB5 /* landline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landline.png; sourceTree = "<group>"; };
+		0154921417DC81E300AC2AB5 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 		015491E217DB261C00AC2AB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0154921317DC81E300AC2AB5 /* landline.png */,
+				0154921417DC81E300AC2AB5 /* message.png */,
 				0154920817DC35AE00AC2AB5 /* heart1.png */,
 				0154920917DC35AF00AC2AB5 /* heart2.png */,
 				0154920017DC2A5C00AC2AB5 /* neutral.png */,
@@ -334,6 +340,8 @@
 				0154920B17DC35AF00AC2AB5 /* heart2.png in Resources */,
 				0154921017DC35F800AC2AB5 /* LovedOneCell.xib in Resources */,
 				0154921217DC3F0E00AC2AB5 /* back-icon-white.png in Resources */,
+				0154921517DC81E300AC2AB5 /* landline.png in Resources */,
+				0154921617DC81E300AC2AB5 /* message.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

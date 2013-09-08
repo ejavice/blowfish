@@ -16,11 +16,50 @@
   if (!button.selected) {
     [button setSelected:YES];
     [button setBackgroundColor:[UIColor orangeColor]];
-    [button.titleLabel setTextColor:[UIColor blackColor]];
   } else {
     [button setSelected:NO];
     [button setBackgroundColor:[UIColor grayColor]];
-    [button.titleLabel setTextColor:[UIColor whiteColor]];
+  }
+}
+
+- (IBAction)pillTimePressed:(id)sender {
+  UIButton *button = (UIButton *)sender;
+  NSString *time = button.titleLabel.text;
+  if ([time isEqualToString:@"Morning"]) {
+    self.morningButton.backgroundColor = [UIColor redColor];
+    self.afternoonButton.backgroundColor = [UIColor grayColor];
+    self.eveningButton.backgroundColor = [UIColor grayColor];
+    
+    self.morningButton.selected = YES;
+    self.afternoonButton.selected = NO;
+    self.eveningButton.selected = NO;
+  } else if ([time isEqualToString:@"Afternoon"]) {
+    self.morningButton.backgroundColor = [UIColor grayColor];
+    self.afternoonButton.backgroundColor = [UIColor redColor];
+    self.eveningButton.backgroundColor = [UIColor grayColor];
+    
+    self.morningButton.selected = NO;
+    self.afternoonButton.selected = YES;
+    self.eveningButton.selected = NO;
+  } else {
+    self.morningButton.backgroundColor = [UIColor grayColor];
+    self.afternoonButton.backgroundColor = [UIColor grayColor];
+    self.eveningButton.backgroundColor = [UIColor redColor];
+    
+    self.morningButton.selected = NO;
+    self.afternoonButton.selected = NO;
+    self.eveningButton.selected = YES;
+  }
+}
+
+- (IBAction)landlineButtonPressed:(id)sender {
+  UIButton *button = (UIButton *)sender;
+  if (button.selected) {
+    [button setImage:[UIImage imageNamed:@"message.png"] forState:UIControlStateNormal];
+    button.selected = NO;
+  } else {
+    [button setImage:[UIImage imageNamed:@"landline.png"] forState:UIControlStateNormal];
+    button.selected = YES;
   }
 }
 
