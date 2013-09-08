@@ -100,21 +100,6 @@ function callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberA
 	console.log("Got here first");
 }
 
-//Without Options
-// function callPhone(number, text){
-//	twilio.callPhone({
-//		From: twilioPhoneNumber,
-//		To: number,
-//		Url: "http://twimlets.com/echo?Twiml=%3CResponse%3E%3CSay%3E"+encodeURI(text)+"%3C%2FSay%3E%3C%2FResponse%3E"
-//	}, {
-// success: function(httpResponse) {
-//		console.log(httpResponse);
-//	},
-//	error: function(httpResponse) {
-//		console.error(httpResponse);
-//	}
-//	});
-// }
 
 //With Options
 function callPhoneOptions(number, text){
@@ -177,6 +162,7 @@ Parse.Cloud.define("updateRemembered", function(request, response) {
 	});
 });
 
+//update dialed
 Parse.Cloud.define("dialIncrement", function(request, response) {
   var updatetotalCalls = new Parse.Query("Loved_Ones");
 	updatetotalCalls.equalTo("phoneNumber", ""+request.params.phone);
