@@ -14,6 +14,7 @@ Parse.Cloud.job("callMorningPhones", function(request, response) {
 	var pillNameArr = [];
 	var lovedOneNameArr = [];
 	var lovedOneNumberArr = [];
+	var smsOrPhoneArr = [];
 	var pillQuery = new Parse.Query("Pills_To_Take");
 	pillQuery.contains("days", dayofWeek);
 	pillQuery.find({
@@ -24,9 +25,10 @@ Parse.Cloud.job("callMorningPhones", function(request, response) {
 					pillNameArr[i] = pillResults[i].get("pillName");
 					lovedOneNameArr[i] = pillResults[i].get("lovedOneName");
 					lovedOneNumberArr[i] = pillResults[i].get("lovedOneNumber");
+					smsOrPhoneArr[i] = pillResults[i].get("smsOrPhoneArr");
 				}
 			}
-			response.success(callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr));
+			response.success(callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr, smsOrPhoneArr));
 		},
 		error: function() {
 			response.error("Pill Search Fail");
@@ -41,6 +43,7 @@ Parse.Cloud.job("callNoonPhones", function(request, response) {
 	var pillNameArr = [];
 	var lovedOneNameArr = [];
 	var lovedOneNumberArr = [];
+	var smsOrPhoneArr = [];
 	var pillQuery = new Parse.Query("Pills_To_Take");
 	pillQuery.contains("days", dayofWeek);
 	pillQuery.find({
@@ -51,9 +54,10 @@ Parse.Cloud.job("callNoonPhones", function(request, response) {
 					pillNameArr[i] = pillResults[i].get("pillName");
 					lovedOneNameArr[i] = pillResults[i].get("lovedOneName");
 					lovedOneNumberArr[i] = pillResults[i].get("lovedOneNumber");
+					smsOrPhoneArr[i] = pillResults[i].get("smsOrPhoneArr");
 				}
 			}
-			response.success(callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr));
+			response.success(callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr, smsOrPhoneArr));
 		},
 		error: function() {
 			response.error("Pill Search Fail");
@@ -68,6 +72,7 @@ Parse.Cloud.job("callNightPhones", function(request, response) {
 	var pillNameArr = [];
 	var lovedOneNameArr = [];
 	var lovedOneNumberArr = [];
+	var smsOrPhoneArr = [];
 	var pillQuery = new Parse.Query("Pills_To_Take");
 	pillQuery.contains("days", dayofWeek);
 	pillQuery.find({
@@ -78,9 +83,10 @@ Parse.Cloud.job("callNightPhones", function(request, response) {
 					pillNameArr[i] = pillResults[i].get("pillName");
 					lovedOneNameArr[i] = pillResults[i].get("lovedOneName");
 					lovedOneNumberArr[i] = pillResults[i].get("lovedOneNumber");
+					smsOrPhoneArr[i] = pillResults[i].get("smsOrPhoneArr");
 				}
 			}
-			response.success(callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr));
+			response.success(callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr, smsOrPhoneArr));
 		},
 		error: function() {
 			response.error("Pill Search Fail");
@@ -88,16 +94,19 @@ Parse.Cloud.job("callNightPhones", function(request, response) {
 	});
 });
 
-function callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr){
+function callPhones(lovedOneIdArr, pillNameArr, lovedOneNameArr, lovedOneNumberArr, smsOrPhoneArr){
 	for(var i = 0; i < lovedOneNumberArr.length;++i){
 		if(lovedOneNumberArr[i]!==undefined){
 			var text = "Hello "+lovedOneNameArr[i]+"! Did you remember to take your "+ pillNameArr[i]+". If you did, press 1. If not, please take your medication now.";
 			console.log("Text: "+text);
-			callPhoneOptions("+"+lovedOneNumberArr[i], text);
+			if(smsOrPhoneArr[i]=="phone"){
+				callPhoneOptions("+"+lovedOneNumberArr[i], text);
+			}else{
+				sendSms("+"+lovedOneNumberArr[i], text);
+			}
 			Parse.Cloud.run("dialIncrement", {"phone": ""+lovedOneNumberArr[i]});
 		}
 	}
-	console.log("Got here first");
 }
 
 
@@ -113,6 +122,24 @@ function callPhoneOptions(number, text){
 	},
 	error: function(httpResponse) {
 		console.error(httpResponse);
+	}
+	});
+}
+
+function sendSms(number, text){
+	console.log("GOt inside sms");
+	twilio.sendSMS({
+		From: twilioPhoneNumber,
+		To: number,
+		Body: "Did you remember to take your Benazepril? If so respond to this message with a 1"
+	}, {
+	success: function(httpResponse) {
+		console.log(httpResponse);
+		response.success("SMS sent!");
+	},
+	error: function(httpResponse) {
+		console.error(httpResponse);
+		response.error("Uh oh, something went wrong");
 	}
 	});
 }
@@ -137,8 +164,24 @@ Parse.Cloud.define("sendSMS", function(request, response) {
 
 //Twilio receive SMS
 Parse.Cloud.define("receiveSMS", function(request, response) {
-	console.log("Received a new text: " + request.params.From);
-	response.success();
+	var updateQueryRem = new Parse.Query("Loved_Ones");
+	var phoneNumber = request.params.From.replace('+','');
+	updateQueryRem.equalTo("phoneNumber", ""+phoneNumber);
+	updateQueryRem.find({
+		success: function(results) {
+			if(results[0].get("numRemembered")===undefined){
+				results[0].set("numRemembered", 1);
+			}else{
+				results[0].increment("numRemembered");
+				
+			}
+			results[0].save();
+			response.success("Updated: User Remembered To take Meds");
+		},
+		error: function() {
+			response.error("Update Remembered Fail");
+		}
+	});
 });
 
 //Update remembered
