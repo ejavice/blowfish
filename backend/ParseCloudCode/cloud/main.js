@@ -46,7 +46,7 @@ Parse.Cloud.job("callNoonPhones", function(request, response) {
 	pillQuery.find({
 		success: function(pillResults) {
 			for (var i = 0; i < pillResults.length; ++i) {
-				if(pillResults[i].get("time")=="noon"){
+				if(pillResults[i].get("time")=="afternoon"){
 					lovedOneIdArr[i] = pillResults[i].get("lovedOne");
 					pillNameArr[i] = pillResults[i].get("pillName");
 					lovedOneNameArr[i] = pillResults[i].get("lovedOneName");
@@ -73,7 +73,7 @@ Parse.Cloud.job("callNightPhones", function(request, response) {
 	pillQuery.find({
 		success: function(pillResults) {
 			for (var i = 0; i < pillResults.length; ++i) {
-				if(pillResults[i].get("time")=="night"){
+				if(pillResults[i].get("time")=="evening"){
 					lovedOneIdArr[i] = pillResults[i].get("lovedOne");
 					pillNameArr[i] = pillResults[i].get("pillName");
 					lovedOneNameArr[i] = pillResults[i].get("lovedOneName");
