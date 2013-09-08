@@ -73,8 +73,18 @@ static const float topBarButtonSize = 26;
         NSString *objectId = object.objectId;
         NSString *name = [object objectForKey:@"name"];
         NSString *phoneNumber = [object objectForKey:@"phoneNumber"];
+        
+        float roundedPercentage;
+        NSNumber *numRemembered = [object objectForKey:@"numRemembered"];
+        NSNumber *totalCalls = [object objectForKey:@"totalCalls"];
+        if (!totalCalls || !numRemembered || [totalCalls integerValue] == 0 || [numRemembered integerValue] == 0) {
+          roundedPercentage = 0;
+        } else {
+          roundedPercentage = [numRemembered floatValue] / [totalCalls floatValue];
+        }
+        NSString *percentage = [NSString stringWithFormat:@"%d", (int)(roundedPercentage * 100)];
         if (![self lovedOneAlreadyExists:objectId]) {
-          LovedOne *lovedOne = [[LovedOne alloc] initWithObjectId:objectId name:name phoneNumber:phoneNumber];
+          LovedOne *lovedOne = [[LovedOne alloc] initWithObjectId:objectId name:name phoneNumber:phoneNumber percentage:percentage];
           [self.lovedOnes addObject:lovedOne];
         }
       }
@@ -122,6 +132,7 @@ static const float topBarButtonSize = 26;
   }
   
   LovedOne *lovedOne = [self.lovedOnes objectAtIndex:indexPath.row];
+  cell.percentageLabel.text = [NSString stringWithFormat:@"%@%%", lovedOne.percentage];
   cell.nameLabel.text = lovedOne.name;
   cell.phoneLabel.text = [self formatPhoneNumber:lovedOne.phoneNumber];
   cell.selectionStyle = UITableViewCellSelectionStyleGray;

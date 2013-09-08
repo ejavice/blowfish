@@ -10,11 +10,12 @@
 
 @implementation LovedOne
 
-- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name phoneNumber:(NSString *)phoneNumber {
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name phoneNumber:(NSString *)phoneNumber percentage:(NSString *)percentage {
   if (self = [super init]) {
     self.objectId = objectId;
     self.name = name;
     self.phoneNumber = phoneNumber;
+    self.percentage = percentage;
   }
   return self;
 }

@@ -14,7 +14,8 @@
 @property (nonatomic, retain) NSString *objectId;
 @property (nonatomic, retain) NSArray *pills;
 @property (nonatomic, retain) NSString *phoneNumber;
+@property (nonatomic, retain) NSString *percentage;
 
-- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name phoneNumber:(NSString *)phoneNumber;
+- (id)initWithObjectId:(NSString *)objectId name:(NSString *)name phoneNumber:(NSString *)phoneNumber percentage:(NSString *)percentage;
 
 @end

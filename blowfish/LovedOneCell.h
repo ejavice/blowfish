@@ -10,6 +10,7 @@
 
 @interface LovedOneCell : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet UILabel *percentageLabel;
 @property (nonatomic, retain) IBOutlet UILabel *nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel *phoneLabel;
 
